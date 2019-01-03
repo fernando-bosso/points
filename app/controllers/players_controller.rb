@@ -2,10 +2,10 @@
 
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    @players = Player.includes(:point_entries).all
   end
 
   def show
-    @player = Player.find(params[:id])
+    @player = Player.includes(:point_entries).find(params[:id])
   end
 end
