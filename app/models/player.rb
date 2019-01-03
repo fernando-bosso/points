@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Player < ApplicationRecord
   MAX_ALLOWED_POINTS = 3126
 
