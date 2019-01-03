@@ -7,3 +7,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Player.find_or_create_by(id: 1, name: 'Luiz')
+Player.find_or_create_by(id: 2, name: 'Fernando')
+Player.find_or_create_by(id: 3, name: 'Lobo')
+Player.find_or_create_by(id: 4, name: 'Bosso')

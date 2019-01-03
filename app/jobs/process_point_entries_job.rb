@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProcessPointEntriesJob < ApplicationJob
   queue_as :process_points
 

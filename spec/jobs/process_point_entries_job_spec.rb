@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ProcessPointEntriesJob, type: :job do
@@ -10,7 +12,6 @@ RSpec.describe ProcessPointEntriesJob, type: :job do
 
   describe 'perform' do
     it 'enqueues job for each entry line', :perform_enqueued do
-      ActiveJob::Base.queue_adapter = :test
       expect { ProcessPointEntriesJob.perform_now(entries) }.to change(PointEntry, :count).by(2)
     end
   end

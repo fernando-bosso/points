@@ -3,7 +3,7 @@
 class ProcessPlayerEntry
   def initialize(entry_line)
     @player = Player.find(entry_line[:player_id])
-    @entry_value = entry_line[:value]
+    @entry_value = entry_line[:value].to_i
     @entry_date = entry_line[:date]
   end
 
