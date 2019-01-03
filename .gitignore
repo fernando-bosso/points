@@ -15,9 +15,8 @@
 
 # Ignore uploaded files in development
 /storage/*
-/storage/points/*
 !/storage/.keep
-!/storage/points/.keep
+!/storage/csv/.keep
 
 /node_modules
 /yarn-error.log
