@@ -1,17 +1,18 @@
-version: '3'
+version: '3.7'
 
 volumes:
   gems:
+  pg_data:
 
 services:
   db:
     image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
   web:
     build: .
     environment:
-      DATABASE_URL: "postgresql://postgres@dbhost/"
+      DATABASE_URL: "postgresql://pguser@dbhost/"
     links:
       - db:dbhost
     command: bash -c "rm -f tmp/pids/server.pid && rails s -b '0.0.0.0'"
