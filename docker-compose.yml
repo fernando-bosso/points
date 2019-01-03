@@ -10,7 +10,11 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      DATABASE_URL: "postgresql://postgres@dbhost/"
+    links:
+      - db:dbhost
+    command: bash -c "rm -f tmp/pids/server.pid && rails s -b '0.0.0.0'"
     volumes:
       - gems:/usr/local/bundle
       - .:/usr/src/app
