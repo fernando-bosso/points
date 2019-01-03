@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Pré requisitos:
 
-Things you may want to cover:
+### Docker, docker-compose
 
-* Ruby version
+## Comandos
 
-* System dependencies
+### docker-compose build web
+### docker-compose run --rm web rake db:{create,migrate,seed} (para inicializar a base de dados)
+### docker-compose up web (para subir o servidor)
 
-* Configuration
+### Acessar via http://localhost:3000
 
-* Database creation
+## Informações adicionais
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### A pasta monitorada é a pasta ./storage/points, qualquer arquivo adicionado a ela será processado automaticamente caso esteja no formato correto.
