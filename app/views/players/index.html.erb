@@ -1,21 +1,23 @@
 <h2> Lista de Jogadores </h2>
 <% if @players.any? %>
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Pontos</th>
-  </tr>
-  <% @players.each do |player| %>
+<div class="table-responsive">
+  <table class="table table-striped">
     <tr>
-      <td>
-        <%= link_to player.name, player_path(player) %>
-      </td>
-      <td>
-        <%= player.points %>
-      </td>
+      <th>Nome</th>
+      <th>Pontos</th>
     </tr>
-  <% end %>
-</table>
+    <% @players.each do |player| %>
+      <tr>
+        <td>
+          <%= link_to player.name, player_path(player) %>
+        </td>
+        <td>
+          <%= player.points %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 <% else %>
   <p>
     Nenhum jogador cadastrado

@@ -1,22 +1,24 @@
 <h3> <%= @player.name %> </h3>
 
 <% if @player.point_entries.any? %>
-<table>
-  <tr>
-    <th>Data</th>
-    <th>Pontos</th>
-  </tr>
-  <% @player.point_entries.each do |point_entry| %>
+<div class="table-responsive">
+  <table class="table table-stripped">
     <tr>
-      <td>
-        <%= point_entry.date %>
-      </td>
-      <td>
-        <%= point_entry.value %>
-      </td>
+      <th>Data</th>
+      <th>Pontos</th>
     </tr>
-  <% end %>
-</table>
+    <% @player.point_entries.each do |point_entry| %>
+      <tr>
+        <td>
+          <%= l(point_entry.date, format: :short) %>
+        </td>
+        <td>
+          <%= point_entry.value %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 <% else %>
 <p>
   Jogador não possui pontuações
