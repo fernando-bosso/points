@@ -1,0 +1,66 @@
+AllCops:
+  TargetRubyVersion: 2.5.3
+  Exclude:
+    # You could specify set of files or dirs while you want to be ignored by rubocop
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'db/schema.rb'
+    - 'Gemfile.lock'
+    - !ruby/regexp /old_and_unused\.rb$/
+    - 'app/helpers/**/*'
+    - 'node_modules/**/*'
+    - 'config/puma.rb'
+
+Rails:
+  Enabled: true
+
+Style/TernaryParentheses:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/routes/**/*'
+    - 'db/migrate/**/*'
+  Max: 17.5
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/routes/**/*'
+    - 'db/migrate/**/*'
+    - 'spec/**/*'
+    - 'config/routes.rb'
+    - 'lib/tasks/**/*'
+  Max: 30
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/routes/**/*'
+    - 'db/migrate/**/*'
+  Max: 15
+
+Metrics/ClassLength:
+  Max: 200
+
+Rails/NotNullColumn:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - 'Gemfile'
