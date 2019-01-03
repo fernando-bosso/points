@@ -33,3 +33,13 @@ module App
     config.generators.system_tests = nil
   end
 end
+
+listener = Listen.to('storage/points') do |_modified, added, _removed|
+  Rails.logger.info "added absolute path: #{added}"
+  added.each do |file_added|
+    PointsFileProcessor.new(file_added).execute!
+    File.delete(file_added) if File.exist?(file_added)
+  end
+end
+
+listener.start
